@@ -9,17 +9,7 @@ import { useEffect } from "react";
 
 
 function App() {
-
-    useEffect(()=>{
-        fetch('http://3.35.233.217:3306')
-        .then(res => {
-            // return res.json();
-            console.log(res);
-        })
-    }, [])
-
-        
-         
+  
         return (
             <div>
                 

@@ -1,15 +1,29 @@
 import React from "react";
 import { Component } from "react";
+import axios  from 'axios';
+import $ from 'jquery';
 
-class Total extends Component {
-    render() {
+const Total = ()=> {
+        
+        const getData = ()=>{
+            
+            axios
+            .get('http://localhost:3787/')
+            .then((res) => {
+               $(".please").text(res.data[0].damin1);
+            })
+
+        }
+        getData();
+        
+        
         return (
             <div className="main_page">
                 <h2>전문변환플랫폼 거래통계</h2>
                 <div className="count_total">
                     <div>
                         <p>총 건수</p>
-                        <h1>338</h1>
+                        <h1 className="please"></h1>
                         <b className="blue"><i className="fa-solid fa-caret-down"></i>113</b>
                     </div>
                     <div>
@@ -25,7 +39,7 @@ class Total extends Component {
                 </div>
             </div>
         )
-    }
+    
 }
 
 export default Total;

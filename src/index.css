@@ -69,7 +69,7 @@ body {
 #include {
     width: 100%;
     min-width: 1350px;
-    display: none;
+    /* display: none; */
 }
 
 /* slide_menu */

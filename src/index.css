@@ -1,13 +1,335 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* import */
+
+@import url('https://webfontworld.github.io/SCoreDream/SCoreDream.css');
+
+/* init */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    font-family: 'SCoreDream';
+}
+*::selection {
+  background: #7a5cff;
+  color: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.dn {
+    display: none;
+}
+
+button > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #f8f7fb;
+}
+
+
+.btn {
+    border: 1.3px solid #7659ff;
+    background-color: #7659ff;
+    color: #fff;
+    box-shadow: 0 3px 10px 5px #d1c9fc;
+    transition: .3s;
+}
+.btn > a {
+    color: #fff;
+}
+.btn:hover {
+    background-color: #fff;
+    color: #7659ff;
+}
+.btn:hover > a {
+    color: #7659ff;
+}
+
+/* include */
+#include {
+    width: 100%;
+    min-width: 1350px;
+    display: none;
+}
+
+/* slide_menu */
+#slide_menu {
+    width: 350px;
+    background-color: #6f51ff;
+    padding: 50px 60px;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    box-shadow: 0 3px 30px 5px #c1b6fd;
+    /* z-index: 30; */
+    float: left;
+    position: fixed;
+    left: 0;
+    height: 100%;
+}
+#slide_menu * {
+    color: #fff;
+}
+
+#logo {
+    background-color: #6045e2;
+    padding: 5px 15px;
+    border-radius: 21px;
+    font-size: 14px;
+}
+#close_slide_menu,
+#open_slide_menu {
+    background-color: #6045e2;
+    border: none;
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+#close_slide_menu {
+    float: right;
+}
+#open_slide_menu {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    box-shadow: 0 3px 12px 5px #cbc3f6;
+    display: none;
+    z-index: 99;
+}
+#open_slide_menu > i {
+    color: #fff;
+}
+
+#menu {
+    margin-top: 100px;
+    float: right;
+    width: 200px;
+}
+#menu > li {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 20px;
+    font-weight: 500;
+    transition: .3s;
+    cursor: pointer;
+}
+#menu > li:hover {
+    text-shadow: 0px 0px 2px #fff;
+}
+
+#menu > li.active {
+    background-color: #f8f7fb;
+    border-top-left-radius: 21px;
+    border-bottom-left-radius: 21px;
+    box-shadow: 180px 0px 0 0px #f8f7fb;
+    color: #6045e2;
+}
+
+.back_circle {
+    background-color: #7659ff;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -5;
+}
+.circle1 {
+    
+    width: 380px;
+    height: 380px;
+    left: -50px;
+    top: -100px;   
+}
+.circle2 {
+    width: 150px;
+    height: 150px;
+
+    left: -50px;
+    top: 400px;
+}
+.circle3 {
+    width: 30px;
+    height: 30px;
+    top: 520px;
+    left: 110px;
+}
+
+/* in */
+#in {
+    background-color: #f8f7fb;
+    padding: 30px 50px 30px 400px;
+    float: left;
+    width: 100%;
+}
+
+/* #in > .select_zone */
+.select_zone {
+    margin: 30px auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+}
+.select_boxes {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-right: 30px;
+}
+.select_boxes > div {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 30px;
+}
+.select_boxes > div > span {
+    font-size: 14px;
+    margin-right: 20px;
+}
+.select_boxes > div >  input {
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+    padding: 5px 20px;
+    box-shadow: 0px 3px 10px 5px #f3f2f6;
+}
+.select_boxes > div > input:focus {
+    outline: 1px solid #6045e2;
+}
+.select_zone > button {
+    width: 100px;
+    height: 80px;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* #in > .main_page */
+.main_page {
+    /* width: 100%; */
+    margin: 30px 50px;
+    padding: 16px 30px;
+    /* height: 3000px; */
+}
+.main_page > h2 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.count_total {
+    width: 100%;
+    display: flex;   
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.count_total > div > p {
+    font-size: 14px;
+    font-weight: 500;
+    text-shadow: 0px 1px 2px #777;
+    margin-bottom: 12px;
+}
+
+.count_total > div > h1 {
+   font-size: 36px;
+   text-shadow: 0px 1px 2px #777;
+}
+
+.count_total > div > b {
+    font-size: 12px;
+    font-weight: 500;
+}
+.count_total > div > b > i {
+    font-size: 10px;
+    margin-right: 3px;
+}
+.count_total > div > b.blue,
+.count_total > div > b.blue > i  {
+    color: #0088ff;
+}
+.count_total > div > b.red,
+.count_total > div > b.red > i {
+    color: #f00;;
+}
+
+.graph_boxes {
+    width: 100%;
+    height: auto;
+    padding: 20px 30px;
+    background-color: #e9e9ec;
+    box-shadow: 0px 5px 5px 10px #f3f2f6;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 500px;
+    overflow-Y: scroll;
+    border-radius: 12px;
+    margin-bottom: 50px;
+}
+.graph_box {
+    width: 30%;
+    width: 280px;
+    height: 220px;
+    background-color: #fff;
+    margin: 12px;
+    border-radius: 12px;
+    padding: 20px;
+}
+.graph_box > h1 {
+    font-size: 14px;
+    font-weight: 500;
+}
+.graph_canvas {
+    width: 100%;
+    margin-top: 10px;
+}
+.input_box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.input_box > span {
+    font-size: 14px;
+    color: #555;
+}
+.input_box > input {
+    margin: 0 20px;
+    border: none;
+    padding: 5px 12px;
+    box-shadow: 0 3px 10px 5px #f3f2f6;
+    border-radius: 10px;
+    outline: none;
+}
+.input_box > button {
+    border-radius: 7px;
+    padding: 5px 12px;
 }

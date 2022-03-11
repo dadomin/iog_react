@@ -10,6 +10,7 @@ const Total = ()=> {
             axios
             .get('http://localhost:3787/')
             .then((res) => {
+                console.log(res.data[0]);
                $(".please").text(res.data[0].damin1);
             })
 
